@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Abhishek Kothari Portfolio</title>
+    <title>Abhishek Kothari &mdash; AI Engineer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <meta name="description" content="Abhishek Kothari &mdash; AI Engineer & Data Scientist. Building production-ready AI systems with LLMs, RAG, agents, and applied machine learning.">
+    <meta name="theme-color" content="#0b0f19">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230b0f19'/><g stroke='%23ffbd39' stroke-width='2' opacity='0.65'><line x1='16' y1='32' x2='32' y2='18'/><line x1='16' y1='32' x2='32' y2='46'/><line x1='32' y1='18' x2='48' y2='32'/><line x1='32' y1='46' x2='48' y2='32'/><line x1='32' y1='18' x2='32' y2='46'/></g><g fill='%23ffbd39'><circle cx='16' cy='32' r='4.5'/><circle cx='32' cy='18' r='4.5'/><circle cx='32' cy='46' r='4.5'/><circle cx='48' cy='32' r='5'/></g></svg>">
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
@@ -25,91 +29,331 @@
 
 
 <style>
-
-/*======================================
-//--//-->   ABOUT
-======================================*/
-
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+:root {
+  --brand: #ffbd39;
+  --brand-soft: #ffe19f;
+  --surface: #10131d;
+  --surface-soft: #171b28;
+  --text-muted: #b8bfd6;
 }
 
-.about-mf .about-img {
-  margin-bottom: 2rem;
+body {
+  background: radial-gradient(circle at 20% -10%, #1c2338 0%, #0b0f19 45%, #070a12 100%);
 }
 
-.about-mf .about-img img {
-  margin-left: 10px;
+.ftco-navbar-light {
+  backdrop-filter: blur(10px);
+  background: rgba(10, 12, 20, 0.82) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
+.hero .overlay {
+  background: linear-gradient(to right, rgba(9, 12, 21, 0.88), rgba(9, 12, 21, 0.25));
 }
 
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
+/* ===== HERO VISUAL (replaces profile photo) ===== */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
+.hero-visual .orb {
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,189,57,0.22) 0%, rgba(255,189,57,0.05) 35%, transparent 70%);
+  filter: blur(10px);
+  animation: pulse 6s ease-in-out infinite;
+}
 
-/* Animation styles */
+.hero-visual .orb-2 {
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(120, 175, 255, 0.18) 0%, transparent 70%);
+  animation: pulse 8s ease-in-out infinite reverse;
+  transform: translate(120px, -160px);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(0.95); opacity: 0.7; }
+  50%      { transform: scale(1.08); opacity: 1; }
+}
+
+.neural-svg {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+
+.neural-svg .node {
+  fill: var(--brand);
+  filter: drop-shadow(0 0 6px rgba(255,189,57,0.85));
+  transform-origin: center;
+  animation: nodeBlink 3.2s ease-in-out infinite;
+}
+
+.neural-svg .node-2 { animation-delay: 0.4s; }
+.neural-svg .node-3 { animation-delay: 0.8s; }
+.neural-svg .node-4 { animation-delay: 1.2s; }
+.neural-svg .node-5 { animation-delay: 1.6s; }
+.neural-svg .node-6 { animation-delay: 0.6s; }
+
+@keyframes nodeBlink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+.neural-svg .link {
+  stroke: rgba(255, 189, 57, 0.38);
+  stroke-width: 1;
+  stroke-dasharray: 4 6;
+  animation: dataFlow 3s linear infinite;
+}
+
+.neural-svg .link-fast { animation-duration: 1.8s; }
+.neural-svg .link-slow { animation-duration: 4.5s; }
+
+@keyframes dataFlow {
+  to { stroke-dashoffset: -40; }
+}
+
+.floating-chip {
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 189, 57, 0.08);
+  border: 1px solid rgba(255, 189, 57, 0.35);
+  padding: 6px 14px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  min-width: 90px;
+  text-align: center;
+  animation: float 5s ease-in-out infinite;
+}
+
+.floating-chip.fc-1 { top: 18%;    left: 6%;   animation-delay: 0s;   }
+.floating-chip.fc-2 { top: 18%;    right: 6%;  animation-delay: 1.2s; }
+.floating-chip.fc-3 { bottom: 18%; left: 6%;   animation-delay: 0.6s; }
+.floating-chip.fc-4 { bottom: 18%; right: 6%;  animation-delay: 2s;   }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ===== TYPING ===== */
 #typing-animation {
   position: relative;
   font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
+  font-weight: 600;
+  color: #ffffff;
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
+  display: inline-block;
 }
 
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
+#typing-animation:after {
+  content: "|";
+  color: var(--brand);
+  margin-left: 6px;
+  animation: blink 0.8s infinite;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ===== CARDS / SURFACES ===== */
+.resume-wrap,
+.blog-entry,
+.contact-info .box {
+  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-@keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
+.resume-wrap:hover,
+.blog-entry:hover,
+.contact-info .box:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 189, 57, 0.35);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.4);
 }
 
+/* equal-height experience cards */
+.resume-row > [class*="col-"] { display: flex; }
+.resume-row .resume-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.resume-wrap ul { flex: 1; }
+.resume-wrap .date { color: var(--brand); letter-spacing: 0.5px; font-weight: 600; }
 
-/* project image zoom effect */
-
-.zoom-effect {
+/* ===== ABOUT ===== */
+.skill-mf .progress {
+  margin: 0.4rem 0 1.05rem 0;
+  border-radius: 999px;
+  height: 0.5rem;
+  background: rgba(255, 255, 255, 0.12);
+}
+.skill-mf .progress .progress-bar {
+  height: 0.5rem;
+  background: linear-gradient(90deg, var(--brand), var(--brand-soft));
+  border-radius: 999px;
+}
+.headshot-frame {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
   overflow: hidden;
-  transition: transform 0.3s ease-out;
+  border: 2px solid rgba(255, 189, 57, 0.45);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45),
+              0 0 0 6px rgba(255, 189, 57, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.zoom-effect:hover {
-  transform: scale(1.1);
+.headshot-frame:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55),
+              0 0 0 6px rgba(255, 189, 57, 0.18);
 }
 
+.headshot-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 
+.about-info li { color: #d7dbeb; }
+.about-info li span:first-child {
+  min-width: 120px;
+  color: #ffffff;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.skill-chip-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.skill-chip {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ebeeff;
+  border-radius: 999px;
+  font-size: 12px;
+  padding: 6px 12px;
+  letter-spacing: 0.2px;
+  transition: all 0.25s ease;
+}
+.skill-chip:hover {
+  background: rgba(255, 189, 57, 0.12);
+  border-color: rgba(255, 189, 57, 0.45);
+  color: #fff;
+}
+
+/* ===== PROJECT CARDS ===== */
+.block-20 {
+  border-radius: 12px;
+  height: 220px;
+}
+.zoom-effect { overflow: hidden; transition: transform 0.35s ease; }
+.zoom-effect:hover { transform: scale(1.04); }
+
+.blog-entry { padding: 14px; }
+.blog-entry .text { padding: 14px 6px 4px; }
+.blog-entry .heading a { color: #fff; }
+.blog-entry .heading a:hover { color: var(--brand); }
+
+.project-meta {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 8px;
+  display: block;
+  letter-spacing: 0.3px;
+}
+
+/* ===== CONTACT BOX FIX (email overflow) ===== */
+.contact-info .box {
+  width: 100%;
+  padding: 22px 16px;
+}
+.contact-info .box p,
+.contact-info .box a {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+.contact-info .box h3 { font-size: 18px; }
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(255, 189, 57, 0.3);
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(255, 189, 57, 0.45);
+}
+
+.tight-copy {
+  color: var(--text-muted);
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.timeline-title { color: #fff; font-weight: 600; }
+
+/* ===== SECTION TITLE ALIGNMENT ===== */
+.section-divider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 30px;
+}
+.section-divider span {
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--brand), transparent);
+  border-radius: 3px;
+}
+
+/* scrollbar polish */
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 189, 57, 0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 189, 57, 0.6); }
 </style>
 
 
@@ -127,7 +371,7 @@
 			<!-- Update Drive link -->
 			<!-- <li class="ftco-animate"><a href="https://www.linkedin.com/in/abhishekkothari47/"><span class="icon"></span></a></li>  -->
 
-			<li class="ftco-animate"><a href="https://drive.google.com/file/d/1kaJe7dhQf5i_EwXm_fWBJCxeqQGnhFSE/view?usp=drive_link"><span class="icon-globe"></span></a></li>
+			<li class="ftco-animate"><a href="https://drive.google.com/file/d/1X-6StaQ67H2Q4hHlfjc7romlf-M6g2WD/view?usp=sharing" target="_blank" rel="noopener"><span class="icon-globe"></span></a></li>
 			
 		  </ul>
 		  <!-- <p><a href="#" class="btn btn-primary ">Download CV</a></p> -->
@@ -157,13 +401,54 @@
 	       <div class="slider-item ">
 	      	<div class="overlay"></div>
 	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url();">
-	          	 <div class="overlay"></div>
+	          <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
+	          	<div class="one-third js-fullheight order-md-last hero-visual">
+	          	  <div class="orb"></div>
+	          	  <div class="orb orb-2"></div>
+	          	  <span class="floating-chip fc-1">LLMs</span>
+	          	  <span class="floating-chip fc-2">RAG</span>
+	          	  <span class="floating-chip fc-3">Agents</span>
+	          	  <span class="floating-chip fc-4">MLOps</span>
+	          	  <svg class="neural-svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+	          	    <g class="links">
+	          	      <line class="link" x1="70" y1="100" x2="200" y2="120"/>
+	          	      <line class="link link-fast" x1="70" y1="100" x2="200" y2="220"/>
+	          	      <line class="link link-slow" x1="70" y1="100" x2="200" y2="320"/>
+	          	      <line class="link" x1="70" y1="190" x2="200" y2="120"/>
+	          	      <line class="link link-fast" x1="70" y1="190" x2="200" y2="220"/>
+	          	      <line class="link" x1="70" y1="190" x2="200" y2="320"/>
+	          	      <line class="link link-slow" x1="70" y1="280" x2="200" y2="220"/>
+	          	      <line class="link" x1="70" y1="280" x2="200" y2="320"/>
+	          	      <line class="link link-fast" x1="70" y1="280" x2="200" y2="400"/>
+	          	      <line class="link" x1="70" y1="370" x2="200" y2="320"/>
+	          	      <line class="link link-slow" x1="70" y1="370" x2="200" y2="400"/>
+	          	      <line class="link" x1="200" y1="120" x2="330" y2="180"/>
+	          	      <line class="link link-fast" x1="200" y1="120" x2="330" y2="280"/>
+	          	      <line class="link" x1="200" y1="220" x2="330" y2="180"/>
+	          	      <line class="link link-slow" x1="200" y1="220" x2="330" y2="280"/>
+	          	      <line class="link link-fast" x1="200" y1="220" x2="330" y2="380"/>
+	          	      <line class="link" x1="200" y1="320" x2="330" y2="280"/>
+	          	      <line class="link link-slow" x1="200" y1="320" x2="330" y2="380"/>
+	          	      <line class="link link-fast" x1="200" y1="400" x2="330" y2="380"/>
+	          	    </g>
+	          	    <g class="nodes">
+	          	      <circle class="node"        cx="70"  cy="100" r="6"/>
+	          	      <circle class="node node-2" cx="70"  cy="190" r="6"/>
+	          	      <circle class="node node-3" cx="70"  cy="280" r="6"/>
+	          	      <circle class="node node-4" cx="70"  cy="370" r="6"/>
+	          	      <circle class="node node-5" cx="200" cy="120" r="7"/>
+	          	      <circle class="node node-6" cx="200" cy="220" r="7"/>
+	          	      <circle class="node node-2" cx="200" cy="320" r="7"/>
+	          	      <circle class="node node-4" cx="200" cy="400" r="7"/>
+	          	      <circle class="node node-3" cx="330" cy="180" r="8"/>
+	          	      <circle class="node node-5" cx="330" cy="280" r="8"/>
+	          	      <circle class="node node-6" cx="330" cy="380" r="8"/>
+	          	    </g>
+	          	  </svg>
 	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
+		          		<span class="subheading section-tag">Hello and welcome</span>
 			            <h1 class="mb-4 mt-3">I'm <span>Abhishek Kothari</span></h1>
 
 						<!-- Element to contain animated typing -->
@@ -177,8 +462,8 @@
 						// Create an array of typing text
 						const typingTexts = [
 						'AI Engineer',
-						'Data Scientist ',
-						'Data Analyst ',	
+						'ML Systems Builder',
+						'Data Scientist'
 						];
 
 						// Create a function to display the typing animation for a given text
@@ -218,64 +503,38 @@
 				<div class="row d-flex align-items-stretch">
 				<!-- <div class="row d-flex"> -->
 					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-									  <div class="about-img">
-										<img src="images/Abhi_headshot.jpeg" class="img-fluid rounded b-shadow-a" alt="">
+						<div class="img-about img d-flex align-items-stretch w-100">
+							<div class="overlay w-100">
+								<div class="row mb-4">
+									<div class="col-12 text-center">
+									  <div class="about-img headshot-frame">
+										<img src="images/New/Headshot.png" alt="Abhishek Kothari">
 									  </div>
 									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-									  <div class="about-info">
-										<p><span class="title-s">Name: </span> <span> Abhishek Kothari</span></p>
-										<p><span class="title-s">Job Role: </span> <span>AI Intern</span></p> 
-										<p><span class="title-s">Company: </span> <span> Suffolk Construction </span></p>
-										<p><span class="title-s">University: </span> <span> Northeastern </span></p>
-										<p><span class="title-s">Address: </span> <span>Boston, USA</span></p>
-									  </div>
-									</div>
-								  </div>
+								</div>
 
 								<div class="skill-mf">
-									<p class="title-s"><h3>Skills</h3></p>
-									<span>PYTHON</span> <span class="pull-right">90%</span>
+									<h3 class="title-s mb-3">Core Skills</h3>
+									<span>Python &amp; PyTorch</span> <span class="pull-right">95%</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
+										<div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
-									<span>SQL</span> <span class="pull-right">85%</span>
+									<span>LLM Engineering &amp; RAG</span> <span class="pull-right">92%</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
+										<div class="progress-bar" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
-									<span>PyTorch</span> <span class="pull-right">90%</span>
+									<span>Generative AI &amp; Agents</span> <span class="pull-right">90%</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
+										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
-									<span>Langchain</span> <span class="pull-right">85%</span>
+									<span>MLOps &amp; Cloud</span> <span class="pull-right">88%</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
+										<div class="progress-bar" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
-									
-									
-									<span>Generative AI</span> <span class="pull-right">85%</span>
+									<span>Databricks &amp; PySpark</span> <span class="pull-right">85%</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
+										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
-									
-					
-									
-									<span>BI Tools</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
 								</div>
 							</div>
 						</div>
@@ -287,32 +546,26 @@
 								
 								<h1 class="big">About</h1>
 								<h2 class="mb-4">About Me</h2>
-								<br>
-								<p>As an adept Artificial Intelligence Engineer, I thrive in using innovation to turn complicated data into insights that can be put into practice. 
-									I use my skills in generative AI, machine learning, Natural Language Processing and Business Intelligence to solve problems precisely and creatively, producing meaningful outcomes. 
-									Together, let's unleash the power of data.
-								</p>
+								<p>I build production-ready AI systems that combine strong data foundations with applied machine learning. My work spans synthetic data generation, LLM-powered products, reinforcement learning, and multimodal AI to solve real business problems.</p>
 								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Artificial Intelligence Engineer</span></li>
-									<li class="d-flex"><span>Domain:</span> <span>Construction, Finance, Sports, Healthcare, Consultancy</span></li>
-									<li class="d-flex"><span>Education:</span> <span>MSc Data Science</span></li>
-									<li class="d-flex"><span>Frameworks:</span> <span>TensorFlow, Langchain, PyTorch, Streamlit, &amp; Shiny</span></li>
-									<li class="d-flex"><span>Tools:</span> <span>Posit, Databricks, Tableau, Power BI, Excel, &amp; Conflusion</span></li>
-									<li class="d-flex"><span>Other Skills:</span> <span>GitHub, RAG, LLMs, NoSQL &amp; LDA</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Sports, Music, Treaveling</span></li>
-									
+									<li class="d-flex"><span>Role:</span> <span>AI Engineer</span></li>
+									<li class="d-flex"><span>Focus:</span> <span>Generative AI &middot; ML Systems &middot; Applied Data Science</span></li>
+									<li class="d-flex"><span>Education:</span> <span>MSc Data Science, Northeastern University</span></li>
+									<li class="d-flex"><span>Location:</span> <span>Boston, USA</span></li>
 								</ul>
-							</div>
-						</div>
-
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<!-- <p class="mb-4">
-									<span class="number" data-number="30">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p> -->
-								<p><a href="https://www.linkedin.com/in/abhishekkothari47/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+								<div class="skill-chip-wrap justify-content-md-start justify-content-center">
+									<span class="skill-chip">LLMs &amp; RAG</span>
+									<span class="skill-chip">AI Agents</span>
+									<span class="skill-chip">Fine-tuning (LoRA / DPO)</span>
+									<span class="skill-chip">Reinforcement Learning</span>
+									<span class="skill-chip">MLOps</span>
+									<span class="skill-chip">Databricks</span>
+									<span class="skill-chip">PyTorch</span>
+									<span class="skill-chip">Cloud Deployment</span>
+								</div>
+								<div class="mt-4 text-center">
+									<a href="https://www.linkedin.com/in/abhishekkothari47/" target="_blank" rel="noopener" class="btn btn-primary py-3 px-4">Connect on LinkedIn</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -330,70 +583,87 @@
     		<div class="row justify-content-center pb-5">
           <div class="col-md-10 heading-section text-center ftco-animate">
           	<h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-			<br>
-            <p>Data Enthusiast with a solid grounding in machine learning, statistical analysis, and NLP. Committed to transforming raw data into meaningful narratives that fuel data-driven decision-making.</p>
+            <h2 class="mb-3">Experience &amp; Education</h2>
+            <p class="tight-copy">Experience across production analytics, generative AI systems, and applied machine learning &mdash; with a focus on measurable outcomes and practical deployment.</p>
+            <div class="section-divider"><span></span></div>
           </div>
         </div>
 		
 		<div class="row">
-			<h1 class="big-4">Experience</h1>
-			<div class="underline"></div>
-		  </div>
-		  <br>
-		  
-		  <div class="row">
-			<div class="col-md-6">
+			<div class="col-12 text-center">
+				<h1 class="big-4">Experience</h1>
+				<div class="section-divider"><span></span></div>
+			</div>
+		</div>
+		
+		<div class="row resume-row mb-4">
+			<div class="col-md-6 mb-4">
 			  <div class="resume-wrap ftco-animate">
-				<span class="date">June 2025 - Present</span>
-				<h2>Artificial Intelligence Intern</h2>
+				<span class="date">June 2026 - Present</span>
+				<h2>Associate Data Scientist</h2>
 				<span class="position">Suffolk Construction</span>
 				<ul>
-				  <li>Collaborating with the Data anaytics and data science team in order to streamline construction data and provide insights using our "Project Dashboard".</li>
-				  <li>Developing AI-driven safety initiatives by using Vision models, aiming to enhance on-site worker safety through rapid identification of hazardous scenarios in construction environments.</li>
+				  <li>Built a synthetic data generation framework on Databricks to model realistic construction project metadata, schedules, budgets, tasks, and RFI events at scale.</li>
+				  <li>Designed a multi-layer quality framework with statistical tests, TSTR utility checks, and feature-behavior validation to ensure synthetic data fidelity and usability.</li>
+				  <li>Developed forward simulations for project trajectories (CPI/SPI, schedule and budget shifts) using latent factor dynamics and stochastic event modeling.</li>
 				</ul>
 			  </div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 mb-4">
 			  <div class="resume-wrap ftco-animate">
-				<span class="date">September 2024 - May 2025</span>
+				<span class="date">June 2025 - May 2026</span>
+				<h2>AI Intern</h2>
+				<span class="position">Suffolk Construction</span>
+				<ul>
+				  <li>Partnered with the Data Analytics &amp; Data Science team to streamline construction data and surface insights through the internal Project Dashboard.</li>
+				  <li>Developed AI-driven safety initiatives using vision models to enable rapid identification of hazardous scenarios on construction sites.</li>
+				  <li>Prototyped early data products that later informed the company&rsquo;s broader analytics roadmap.</li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+
+		<div class="row resume-row mb-4">
+			<div class="col-md-6 mb-4">
+			  <div class="resume-wrap ftco-animate">
+				<span class="date">Jan 2026 - Apr 2026</span>
 				<h2>Graduate Teaching Assistant</h2>
 				<span class="position">Khoury College of Computer Sciences</span>
 				<ul>
-				  <li>Evaluating assignments for 300+ students for Data Viz course, ensuring fair assessment and satisfaction.</li>
-				  <li>Leading weekly office hours, clarifying complex concepts, boosting student performance by 20%.</li>
-				  <li>Collaborating with the professor to design quizzes, enhancing students’ grasp of key concepts by 15%.</li>
+				  <li>Served as Head TA for DS 4200, overseeing 5 Homework TAs to ensure smooth weekly grading operations.</li>
+				  <li>Conducted weekly office hours for 200+ students, clarifying complex concepts and supporting student performance.</li>
+				  <li>Collaborated with faculty on quiz and assessment design to reinforce key concepts.</li>
 				</ul>
 			  </div>
 			</div>
-		  </div>
-		  <br>
-		  <div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6 mb-4">
+			  <div class="resume-wrap ftco-animate">
+				<span class="date">Sep 2025 - Apr 2026</span>
+				<h2>Career Peer Advisor</h2>
+				<span class="position">Khoury College of Computer Sciences</span>
+				<ul>
+				  <li>Mentored graduate students through the co-op search with structured guidance on resume positioning, elevator pitches, and technical storytelling.</li>
+				  <li>Led workshops on networking strategies and interview readiness for AI, data science, and software engineering roles.</li>
+				  <li>Served on the Khoury Student Advisory Board, contributing to initiatives that improved the academic experience at Northeastern.</li>
+				</ul>
+			  </div>
+			</div>
+		</div>
+
+		<div class="row resume-row mb-4 justify-content-center">
+			<div class="col-md-8 mb-4">
 			  <div class="resume-wrap ftco-animate">
 				<span class="date">April 2024 - August 2024</span>
 				<h2>Data Scientist</h2>
 				<span class="position">AlgoAnalytics, Pune, India</span>
 				<ul>
-				  <li>Aided the Algo. core team in the development of Nifty Trading Strategy using a Random Forest classifier.</li>
-				  <li>Increased the prediction strategy's accuracy from 54.64% to 57.12% by Hyper-parameter optimization.</li>
-				  <li>Enhanced the annualized returns from 21.84% to 25.68% through back-testing.</li>
+				  <li>Contributed to the development of a Nifty Trading Strategy using a Random Forest classifier alongside the core algorithmic trading team.</li>
+				  <li>Improved prediction strategy accuracy from 54.64% to 57.12% through hyper-parameter optimization.</li>
+				  <li>Enhanced annualized returns from 21.84% to 25.68% via systematic back-testing.</li>
 				</ul>
 			  </div>
 			</div>
-			<div class="col-md-6">
-			  <div class="resume-wrap ftco-animate">
-				<span class="date">February 2023 - May 2023</span>
-				<h2>Research Intern</h2>
-				<span class="position">Deep Learning Lab, PICT, Pune</span>
-				<ul>
-				  <li>Pioneered a team of 3 Engineers in developing a Text-to-Image Generation Algorithm using stable-karlo pipeline.</li>
-				  <li>Accomplished an accuracy of 83% in generating relevant images based on user input.</li>
-				  <li>Built a user-friendly GUI hosted on streamlit providing users with a custom hyper-parameter slicer.</li>
-				</ul>
-			  </div>
-			</div>
-		  </div>
+		</div>
 			
 
 			
@@ -402,40 +672,44 @@
 		<br>
 
 		<div class="row">
-			<h1 class="big-4">Education</h1>
-			<div class="underline"></div>
+			<div class="col-12 text-center">
+				<h1 class="big-4">Education</h1>
+				<div class="section-divider"><span></span></div>
+			</div>
 		</div>
-		<br>
-		
-			<div class="row">
-				<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2024 - 2026</span>
-    					<h2>Masters in Data Science</h2>
-    					<span class="position">Northeastern University, Boston</span>
-    					<ul>
-							<li>GPA : 4.0/4.0</li>
-							<li>Relevant Coursework: Large Language Models, Supervised ML, Unsupervised ML, Data Management & Processing, Algorithms</li>
-						</ul>
-    				</div>
-				</div>
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2020-2024</span>
-    					<h2>Bachelor of Engineering</h2>
-    					<span class="position">PICT, Pune, India</span>
-						<ul>
-							<li>CGPA : 8.95 / 10 </li>
-							<li>Relevant Coursework: Deep Learning, Advanced Java programing, DSA, DBMS.</li>
-						</ul>
-    				</div>
-    			</div>    			
-    		</div>
-			<div class="row justify-content-center mt-5">
-				<div class="col-md-6 text-center ftco-animate">
-					<p><a href="https://drive.google.com/file/d/1a5Xrm-L516CyKFXoFWGil_H40oDvOQUU/view?usp=sharing" class="btn btn-primary py-4 px-5">Download Resume</a></p>
+
+		<div class="row resume-row">
+			<div class="col-md-6 mb-4">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">2024 - 2026</span>
+					<h2>Master of Science in Data Science</h2>
+					<span class="position">Northeastern University, Boston</span>
+					<ul>
+						<li><strong>GPA:</strong> 4.0 / 4.0</li>
+						<li><strong>Coursework:</strong> Large Language Models, Interpretability in LLMs, Supervised ML, Unsupervised ML &amp; Data Mining, MLOps, Algorithms, Data Management &amp; Processing, Data Science Capstone, Career Preparation Co-op.</li>
+						<li><strong>Leadership:</strong> Vice President &amp; Vice Captain, Northeastern University Cricket Club (NUCC); Member, Khoury Student Advisory Board.</li>
+					</ul>
 				</div>
 			</div>
+			<div class="col-md-6 mb-4">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">2020 - 2024</span>
+					<h2>Bachelor of Engineering, Computer Engineering</h2>
+					<span class="position">Pune Institute of Computer Technology (PICT), Pune</span>
+					<ul>
+						<li><strong>CGPA:</strong> 8.95 / 10</li>
+						<li><strong>Coursework:</strong> Deep Learning, Data Structures &amp; Algorithms, Database Management Systems, Advanced Java Programming.</li>
+						<li><strong>Research:</strong> Deep Learning Lab member, contributing to applied AI projects.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center mt-4">
+			<div class="col-12 text-center ftco-animate">
+				<a href="https://drive.google.com/file/d/1X-6StaQ67H2Q4hHlfjc7romlf-M6g2WD/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary py-3 px-5">View Resume</a>
+			</div>
+		</div>
     		
     	</div>
     </section>
@@ -444,74 +718,56 @@
 
     <section class="ftco-section" id="project-section">
 		<div class="container">
-		  <div class="row justify-content-center mb-5 pb-5">
-			<div class="col-md-7 heading-section text-center ftco-animate">
+		  <div class="row justify-content-center mb-5 pb-3">
+			<div class="col-md-9 heading-section text-center ftco-animate">
 			  <h1 class="big big-2">Projects</h1>
-			  <h2 class="mb-4">Projects</h2>
+			  <h2 class="mb-3">Selected Projects</h2>
+			  <p class="tight-copy">A focused set of AI projects spanning LLM products, reinforcement learning, multimodal systems, and production data pipelines.</p>
+			  <div class="section-divider"><span></span></div>
 			</div>
 		  </div>
-	  
-		  <!-- Row 1 -->
-		  <div class="row d-flex">
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/abhikothari091/MangaMatrix-AI-Story-to-Comic-Engine" class="block-20 zoom-effect" style="background-image: url('images/manga.png');"></a>
-				<div class="text mt-3 float-right d-block">
-				  <h3 class="heading"><a href="#">MangaMatrix - AI story to Comic Engine</a></h3>
-				  <p>MangaMatrix, an AI-powered pipeline that transforms narrative prompts into visually engaging manga panels using LLMs and generative models.</p>
+
+		  <div class="row resume-row">
+			<div class="col-md-6 mb-4 d-flex ftco-animate">
+			  <div class="blog-entry w-100">
+				<a href="https://github.com/abhikothari091/PantryPilot" target="_blank" rel="noopener" class="block-20 zoom-effect d-block" style="background-image: url('images/New/PP.jpeg');"></a>
+				<div class="text">
+				  <h3 class="heading"><a href="https://github.com/abhikothari091/PantryPilot" target="_blank" rel="noopener">PantryPilot AI</a></h3>
+				  <p>Full-stack AI pantry assistant with LLM-generated recipes, dietary enforcement, DPO-based preference feedback loops, and observability-driven iteration.</p>
+				  <span class="project-meta">FastAPI &middot; React &middot; Postgres &middot; LLMOps &middot; DPO</span>
 				</div>
 			  </div>
 			</div>
-	  
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/abhikothari091/Visual-Question-Answering-bot" class="block-20 zoom-effect" style="background-image: url('images/VQA.png');"></a>
-				<div class="text mt-3 float-right d-block">
-				  <h3 class="heading"><a href="#">Visual Question Answering Bot</a></h3>
-				  <p>Built a multimodal Visual Question Answering bot combining BERT and ResNet-50 to answer image-based queries with 64% validation accuracy.</p>
+
+			<div class="col-md-6 mb-4 d-flex ftco-animate">
+			  <div class="blog-entry w-100">
+				<a href="https://github.com/abhikothari091/Language_Conditioned_Agent_Using_RL" target="_blank" rel="noopener" class="block-20 zoom-effect d-block" style="background-image: url('images/New/RL.jpeg');"></a>
+				<div class="text">
+				  <h3 class="heading"><a href="https://github.com/abhikothari091/Language_Conditioned_Agent_Using_RL" target="_blank" rel="noopener">Language-Conditioned RL Agent</a></h3>
+				  <p>PPO-trained MiniGrid agent that follows natural language instructions and reaches a 92.7% success rate, with an interactive Flask demo for visualisation.</p>
+				  <span class="project-meta">PyTorch &middot; Ray RLlib &middot; MiniGrid &middot; Flask</span>
 				</div>
 			  </div>
 			</div>
-	  
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/abhikothari091/AI-Powered-ATS-Resume-Analyzer" class="block-20 zoom-effect" style="background-image: url('images/proj_7.jpg');"></a>
-				<div class="text mt-3 float-right d-block">
-				  <h3 class="heading"><a href="#">AI Powered Expert Resume Tracker</a></h3>
-				  <p>Created an ATS Resume Expert Tool with Google Generative AI and Streamlit with evaluations, suggestions and visa support analysis.</p>
+
+			<div class="col-md-6 mb-4 d-flex ftco-animate">
+			  <div class="blog-entry w-100">
+				<a href="https://github.com/abhikothari091/MangaMatrix-AI-Story-to-Comic-Engine" target="_blank" rel="noopener" class="block-20 zoom-effect d-block" style="background-image: url('images/manga.png');"></a>
+				<div class="text">
+				  <h3 class="heading"><a href="https://github.com/abhikothari091/MangaMatrix-AI-Story-to-Comic-Engine" target="_blank" rel="noopener">MangaMatrix: Story to Comic Engine</a></h3>
+				  <p>End-to-end multi-model pipeline that turns short prompts into full manga-style comic panels using fine-tuned LLaMA, Mistral, and DALL-E 3.</p>
+				  <span class="project-meta">LLaMA &middot; Mistral &middot; DALL-E 3 &middot; Full Pipeline</span>
 				</div>
 			  </div>
 			</div>
-		  </div>
-	  
-		  <!-- Row 2 -->
-		  <div class="row d-flex mt-4">
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/abhikothari091/Stock-Market-Prediction" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');"></a>
-				<div class="text mt-3 float-right d-block">
-				  <h3 class="heading"><a href="#">Stock Market Prediction Webapp</a></h3>
-				  <p>Developed a stock market prediction app using deep learning models to forecast prices and offer real-time investment insights.</p>
-				</div>
-			  </div>
-			</div>
-	  
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/abhikothari091/Healthcare-Analysis" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');"></a>
-				<div class="text mt-3 float-right d-block">
-				  <h3 class="heading"><a href="#">Optimizing Patient Treatment</a></h3>
-				  <p>Predicted patient treatment duration using ML to enhance outcomes and reduce hospital stay lengths.</p>
-				</div>
-			  </div>
-			</div>
-	  
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry">
-				<a href="https://github.com/abhikothari091/Namma_Yatri_Business_Analysis" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');"></a>
-				<div class="text mt-3 float-right d-block">
-				  <h3 class="heading"><a href="#">Namma Yatri Business Analysis</a></h3>
-				  <p>Analyzed business performance to optimize operations and boost customer experience through data insights.</p>
+
+			<div class="col-md-6 mb-4 d-flex ftco-animate">
+			  <div class="blog-entry w-100">
+				<a href="https://github.com/abhikothari091/Visual-Question-Answering-bot" target="_blank" rel="noopener" class="block-20 zoom-effect d-block" style="background-image: url('images/VQA.png');"></a>
+				<div class="text">
+				  <h3 class="heading"><a href="https://github.com/abhikothari091/Visual-Question-Answering-bot" target="_blank" rel="noopener">Visual Question Answering Bot</a></h3>
+				  <p>Multimodal VQA system combining ResNet-50 image features and BERT text embeddings with an attention-fusion layer for image-grounded reasoning.</p>
+				  <span class="project-meta">ResNet-50 &middot; BERT &middot; Attention Fusion &middot; VQA v2</span>
 				</div>
 			  </div>
 			</div>
@@ -546,53 +802,51 @@
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
+          <div class="col-md-8 heading-section text-center ftco-animate">
             <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-			<br>
-            <p>Below are the details to reach out to me!</p>
+            <h2 class="mb-3">Get in Touch</h2>
+            <p class="tight-copy">Open to collaborations, full-time AI/Data Science roles, and interesting problems. The fastest way to reach me is email or LinkedIn.</p>
+            <div class="section-divider"><span></span></div>
           </div>
         </div>
 
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
+        <div class="row contact-info mb-5 justify-content-center">
+          <div class="col-md-6 col-lg-3 mb-4 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-map-signs"></span>
           		</div>
-          		<h3 class="mb-4">Location</h3>
+          		<h3 class="mb-3">Location</h3>
 	            <p>Boston, USA</p>
 	          </div>
           </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
+          <div class="col-md-6 col-lg-3 mb-4 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-phone2"></span>
           		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0101010101">+1 857-339-9250</a></p>
+          		<h3 class="mb-3">Phone</h3>
+	            <p><a href="tel:+18573399250">+1 857-339-9250</a></p>
 	          </div>
           </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
+          <div class="col-md-6 col-lg-3 mb-4 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-paper-plane"></span>
           		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="kothari.abhi@northeastern.edu">kothari.abhi@northeastern.edu</a></p>
+          		<h3 class="mb-3">Email</h3>
+	            <p><a href="mailto:kothari.abhi@northeastern.edu">kothari.abhi@<wbr>northeastern.edu</a></p>
 	          </div>
           </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
+          <div class="col-md-6 col-lg-3 mb-4 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-globe"></span>
           		</div>
-          		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="https://drive.google.com/file/d/1kaJe7dhQf5i_EwXm_fWBJCxeqQGnhFSE/view?usp=drive_link">Link to my Resume</a></p> 
+          		<h3 class="mb-3">Resume</h3>
+	            <p><a href="https://drive.google.com/file/d/1X-6StaQ67H2Q4hHlfjc7romlf-M6g2WD/view?usp=sharing" target="_blank" rel="noopener">View Resume</a></p> 
 	          </div>
           </div>
-
-		  
    </div>
  </section>
 
