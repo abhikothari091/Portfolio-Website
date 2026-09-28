@@ -300,6 +300,35 @@ body {
   letter-spacing: 0.3px;
 }
 
+/* featured (full-width) project card */
+.featured-project .block-20 { height: 260px; background-color: #fafafa; }
+.featured-project .text { padding: 14px 10px 4px 28px; }
+.featured-badge {
+  display: inline-block;
+  color: var(--brand);
+  background: rgba(255, 189, 57, 0.08);
+  border: 1px solid rgba(255, 189, 57, 0.35);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+}
+.project-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--brand);
+  font-size: 14px;
+  font-weight: 500;
+}
+.project-link:hover { color: var(--brand-soft); }
+@media (max-width: 991.98px) {
+  .featured-project .block-20 { height: 200px; background-size: contain; }
+  .featured-project .text { padding: 14px 6px 4px; }
+}
+
 /* ===== CONTACT BOX FIX (email overflow) ===== */
 .contact-info .box {
   width: 100%;
@@ -728,6 +757,25 @@ body {
 		  </div>
 
 		  <div class="row resume-row">
+			<div class="col-md-12 mb-4 d-flex ftco-animate">
+			  <div class="blog-entry featured-project w-100">
+				<div class="row no-gutters align-items-center">
+				  <div class="col-lg-6">
+					<a href="https://buildrightai.dev" target="_blank" rel="noopener" class="block-20 zoom-effect d-block" style="background-image: url('images/New/BR.jpeg');"></a>
+				  </div>
+				  <div class="col-lg-6">
+					<div class="text">
+					  <span class="featured-badge">Featured &middot; Live product</span>
+					  <h3 class="heading"><a href="https://buildrightai.dev" target="_blank" rel="noopener">BuildRight: Customer Feedback to Production PRs</a></h3>
+					  <p>AI product-discovery platform that turns raw customer feedback into ranked themes, evidence-cited PRDs, and style-matched GitHub pull requests. Built a multi-agent Claude pipeline with confidence propagation, a deterministic signal layer for prioritization, versioned prompts with LLM call tracing, and a 61-item golden benchmark for regression-testing agent quality.</p>
+					  <span class="project-meta">Claude API &middot; Multi-Agent &middot; FastAPI &middot; Next.js &middot; Postgres &middot; LLMOps &middot; Evals</span>
+					  <a href="https://buildrightai.dev" target="_blank" rel="noopener" class="project-link">Visit buildrightai.dev &rarr;</a>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+
 			<div class="col-md-6 mb-4 d-flex ftco-animate">
 			  <div class="blog-entry w-100">
 				<a href="https://github.com/abhikothari091/PantryPilot" target="_blank" rel="noopener" class="block-20 zoom-effect d-block" style="background-image: url('images/New/PP.jpeg');"></a>
